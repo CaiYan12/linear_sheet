@@ -1,78 +1,65 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include "linear.h"
-
-LinearSheet::LinearSheet()
-{
-	length = 0;
+using namespace std;
+/*
+template <typename _type>
+inline void LinearSheet<_type>::push_back(_type value) {
+    data[len] = value;
+    len++;
 }
 
-LinearSheet::LinearSheet(int n)
-{
-	length = n;
+template <typename _type>
+inline void LinearSheet<_type>::pop_back() {
+    len--;
 }
 
-LinearSheet::LinearSheet(int n, int data)
-{
-	length = n;
-	for (int i = 0; i < length; i++)
-	{
-		a[i] = data;
-	}
+template <typename _type>
+inline void LinearSheet<_type>::push_front(_type value) {
+    for (int i = len; i > 0; i--) {
+        data[i] = data[i - 1];
+    }
+    data[0] = value;
+    len++;
 }
 
-void LinearSheet::show()
-{
-	for (int i = 0; i < length; i++)
-	{
-		std::cout << a[i] << " ";
-	}
-	std::cout << std::endl;
+template <typename _type>
+inline void LinearSheet<_type>::pop_front() {
+    for (int i = 0; i < len - 1; i++) {
+        data[i] = data[i + 1];
+    }
+    len--;
 }
 
-int LinearSheet::setValue(int data, int pos)
-{
-	if (pos >= length)
-	{
-		std::cout << "Position out of range!" << std::endl;
-		return 0;
-	}
-	a[pos] = data;
-	return data;
+template <typename _type>
+inline void LinearSheet<_type>::insert_at(_type value, int index) {
+    for (int i = index; i < len; i++) {
+        data[i + 1] = data[i];
+    }
+    data[index] = value;
 }
 
-int LinearSheet::push(int data) {
-	a[length] = data;
-	length++;
-	return data;
+template <typename _type>
+inline void LinearSheet<_type>::erase_at(int index) {
+    for (int i = index; i < len; i++) {
+        data[i] = data[i + 1];
+    }
+    len--;
 }
 
-int LinearSheet::pop() {
-	length--;
-	return a[length + 1];
+template <typename _type>
+inline void LinearSheet<_type>::sort_in_range(int start, int end) {
+    sort(data + start, data + end + 1);
 }
 
-int LinearSheet::insert(int data, int pos) {
-	if (pos >= length) {
-		std::cout << "Position out of range!" << std::endl;
-		return 0;
-	}
-	for (int i = length - 1; i >= pos; i--) {
-		a[i + 1] = a[i];
-	}
-	a[pos] = data;
-	length++;
-	return data;
+template <typename _type>
+inline void LinearSheet<_type>::reverse_in_range(int start, int end) {
+    reverse(data + start, data + end + 1);
 }
 
-int LinearSheet::remove(int pos) {
-	if (pos >= length) {
-		std::cout << "Position out of range!" << std::endl;
-		return 0;
-	}
-	int data = a[pos];
-	for (int i = pos; i < length; i++) {
-		a[i] = a[i + 1];
-	}
-	length--;
-	return data;
-}
+template <typename _type>
+inline void LinearSheet<_type>::print() {
+    for (int i = 0; i < len; i++) {
+        cout << data[i] << " ";
+    }
+    cout << endl;
+}*/
